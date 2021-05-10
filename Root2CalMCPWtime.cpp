@@ -55,9 +55,9 @@ void Root2CalMCPWtime()
 
 	if (access("../AnaData", F_OK) != 0)
 		system("mkdir ../AnaData");
-	sCalMcp = "../AnaData/calMCP-run-" + to_string(runMin) + "--" + to_string(runMax) + ".root";
+	sCalMcp = "../AnaData/calMCPwTime-run-" + to_string(runMin) + "--" + to_string(runMax) + ".root";
 	TFile *fCalMcp = new TFile(sCalMcp.c_str(), "RECREATE");
-	TTree *tCalMcp = new TTree("tCalMcp", "tree for calibrating MCP");
+	TTree *tCalMcp = new TTree("tCalMcpWTime", "tree for calibrating MCP with time");
 	tCalMcp->Branch("run", &run, "run/I");
 	tCalMcp->Branch("ampTR", &ampTR, "ampTR/D");
 	tCalMcp->Branch("ampTL", &ampTL, "ampTL/D");
